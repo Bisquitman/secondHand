@@ -1,0 +1,10 @@
+.navigation__list {
+  display: flex;
+  gap: 60px;
+}
+
+.navigation__item:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=navigation.css.map */
