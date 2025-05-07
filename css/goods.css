@@ -1,0 +1,28 @@
+.goods {
+  padding: 40px 0 150px;
+}
+
+.goods__container {
+}
+
+.goods__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.goods__item {
+}
+
+/* ---------------------------------------------------- */
+
+@media (max-width: 1000px) {
+  .goods__list {
+    row-gap: 50px;
+  }
+}
+@media (max-width: 560px) {
+  .goods__list {
+    row-gap: 30px;
+  }
+}
