@@ -21,6 +21,7 @@
 
 .navigation__link:hover {
   text-decoration: underline;
+  text-decoration-skip-ink: none;
 }
 
 .navigation__control {
