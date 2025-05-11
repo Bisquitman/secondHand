@@ -18,7 +18,7 @@
   display: flex;
   align-items: flex-end;
   width: 100%;
-  min-height: 500px;
+  height: 360px;
   padding: 70px 80px;
   background-color: var(--main-color);
   background-position: center;
@@ -93,7 +93,7 @@
 
   .hero__slider-link {
     padding: 81px 94px;
-    min-height: 530px;
+    height: 368px;
   }
 
   .hero__slider-line {
@@ -128,7 +128,7 @@
 
   .hero__slider-link {
     padding: 60px 20px;
-    min-height: 400px;
+    height: 280px;
   }
 
   .hero__slider-line {

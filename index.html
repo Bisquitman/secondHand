@@ -10,6 +10,15 @@
   <link rel="stylesheet" href="css/index.css">
   <script src="scripts/index.js" type="module"></script>
   <style id="style">
+    body {
+      opacity: 0;
+      -webkit-transition: opacity 500ms ease;
+      -moz-transition: opacity 500ms ease;
+      -ms-transition: opacity 500ms ease;
+      -o-transition: opacity 500ms ease;
+      transition: opacity 500ms ease;
+    }
+
     .hero__slider-link_women {
       background-image: url('img/hero/01.jpg');
     }
@@ -69,7 +78,7 @@
 
       <div class="header__search">
         <form action="#" class="search">
-          <input type="search" class="search__input" required />
+          <input type="search" class="search__input" required/>
           <button class="search__btn" type="button"></button>
           <button class="search__close" type="button"></button>
         </form>
@@ -115,139 +124,6 @@
     <section class="goods">
       <div class="goods__container">
         <ul class="goods__list">
-          <li class="goods__item">
-            <article class="item">
-              <img src="img/img.jpg" alt="Джемпер" class="item__img">
-              <button class="item__favorite-btn">
-                <svg width="28" height="24">
-                  <use xlink:href="#heart"/>
-                </svg>
-              </button>
-              <div class="item__control-wrapper">
-                <h3 class="item__title">Джемпер</h3>
-                <button class="item__to-cart">В корзину</button>
-                <p class="item__price">
-                  4000 ₽
-                  <span class="item__price-old">5000 ₽</span>
-                </p>
-                <button class="item__description-btn">Подробнее</button>
-              </div>
-            </article>
-          </li>
-          <li class="goods__item">
-            <article class="item">
-              <img src="img/img.jpg" alt="Джемпер" class="item__img">
-              <button class="item__favorite-btn">
-                <svg width="28" height="24">
-                  <use xlink:href="#heart"/>
-                </svg>
-              </button>
-              <div class="item__control-wrapper">
-                <h3 class="item__title">Джемпер</h3>
-                <button class="item__to-cart">В корзину</button>
-                <p class="item__price">
-                  4000 ₽
-                  <span class="item__price-old">5000 ₽</span>
-                </p>
-                <button class="item__description-btn">Подробнее</button>
-              </div>
-            </article>
-          </li>
-          <li class="goods__item">
-            <article class="item">
-              <img src="img/img.jpg" alt="Джемпер" class="item__img">
-              <button class="item__favorite-btn">
-                <svg width="28" height="24">
-                  <use xlink:href="#heart"/>
-                </svg>
-              </button>
-              <div class="item__control-wrapper">
-                <h3 class="item__title">Джемпер</h3>
-                <button class="item__to-cart">В корзину</button>
-                <p class="item__price">
-                  4000 ₽
-                  <span class="item__price-old">5000 ₽</span>
-                </p>
-                <button class="item__description-btn">Подробнее</button>
-              </div>
-            </article>
-          </li>
-          <li class="goods__item">
-            <article class="item">
-              <img src="img/img.jpg" alt="Джемпер" class="item__img">
-              <button class="item__favorite-btn">
-                <svg width="28" height="24">
-                  <use xlink:href="#heart"/>
-                </svg>
-              </button>
-              <div class="item__control-wrapper">
-                <h3 class="item__title">Джемпер</h3>
-                <button class="item__to-cart">В корзину</button>
-                <p class="item__price">
-                  4000 ₽
-                  <span class="item__price-old">5000 ₽</span>
-                </p>
-                <button class="item__description-btn">Подробнее</button>
-              </div>
-            </article>
-          </li>
-          <li class="goods__item">
-            <article class="item">
-              <img src="img/img.jpg" alt="Джемпер" class="item__img">
-              <button class="item__favorite-btn">
-                <svg width="28" height="24">
-                  <use xlink:href="#heart"/>
-                </svg>
-              </button>
-              <div class="item__control-wrapper">
-                <h3 class="item__title">Джемпер</h3>
-                <button class="item__to-cart">В корзину</button>
-                <p class="item__price">
-                  4000 ₽
-                  <span class="item__price-old">5000 ₽</span>
-                </p>
-                <button class="item__description-btn">Подробнее</button>
-              </div>
-            </article>
-          </li>
-          <li class="goods__item">
-            <article class="item">
-              <img src="img/img.jpg" alt="Джемпер" class="item__img">
-              <button class="item__favorite-btn">
-                <svg width="28" height="24">
-                  <use xlink:href="#heart"/>
-                </svg>
-              </button>
-              <div class="item__control-wrapper">
-                <h3 class="item__title">Джемпер</h3>
-                <button class="item__to-cart">В корзину</button>
-                <p class="item__price">
-                  4000 ₽
-                  <span class="item__price-old">5000 ₽</span>
-                </p>
-                <button class="item__description-btn">Подробнее</button>
-              </div>
-            </article>
-          </li>
-          <li class="goods__item">
-            <article class="item">
-              <img src="img/img.jpg" alt="Джемпер" class="item__img">
-              <button class="item__favorite-btn">
-                <svg width="28" height="24">
-                  <use xlink:href="#heart"/>
-                </svg>
-              </button>
-              <div class="item__control-wrapper">
-                <h3 class="item__title">Джемпер</h3>
-                <button class="item__to-cart">В корзину</button>
-                <p class="item__price">
-                  4000 ₽
-                  <span class="item__price-old">5000 ₽</span>
-                </p>
-                <button class="item__description-btn">Подробнее</button>
-              </div>
-            </article>
-          </li>
         </ul>
       </div>
     </section>
@@ -330,6 +206,96 @@
       <a href="#" class="footer__agreement">Соглашение об обработке персональных данных</a>
     </div>
   </footer>
+</div>
+
+<div class="overlay overlay_item">
+  <div class="overlay__modal">
+    <button class="overlay__button-close" type="button"></button>
+    <div class="modal-item">
+      <img class="modal-item__img" src="img/img.jpg" alt="Жилет">
+      <div class="modal-item__description">
+        <h2 class="modal-item__title">Жилет</h2>
+        <ul class="modal-item__advantage-list">
+          <li class="modal-item__advantage-list__item">
+            Состав:
+            <span class="modal-item__text">Хлопок - 47%, Акрил - 26%, Шерсть - 14%, Полиамид - 13%</span>
+          </li>
+          <li class="modal-item__advantage-list__item">
+            Состав:
+            <span class="modal-item__text">Хлопок - 47%, Акрил - 26%, Шерсть - 14%, Полиамид - 13%</span>
+          </li>
+          <li class="modal-item__advantage-list__item">
+            Состав:
+            <span class="modal-item__text">Хлопок - 47%, Акрил - 26%, Шерсть - 14%, Полиамид - 13%</span>
+          </li>
+          <li class="modal-item__advantage-list__item">
+            Состав:
+            <span class="modal-item__text">Хлопок - 47%, Акрил - 26%, Шерсть - 14%, Полиамид - 13%</span>
+          </li>
+          <li class="modal-item__advantage-list__item">
+            Состав:
+            <span class="modal-item__text">Хлопок - 47%, Акрил - 26%, Шерсть - 14%, Полиамид - 13%</span>
+          </li>
+        </ul>
+        <p class="modal-item__article">Артикул: <span class="modal-item__text">IX001XW016CK</span></p>
+        <div class="modal-item__btn-group">
+          <button class="modal-item__btn-to-cart">В корзину</button>
+          <button class="modal-item__btn-to-favorite">
+            <svg width="44" height="37" viewBox="0 0 44 37" xmlns="http://www.w3.org/2000/svg">
+              <path
+                  d="M32.3125 0.5C38.684 0.5 43.5 5.45182 43.5 12.0752C43.5 15.632 42.0087 18.6515 39.3027 21.7617C36.9241 24.4957 33.6407 27.2626 29.6709 30.498L27.9277 31.915C26.7186 32.8966 25.3873 33.9769 23.9951 35.124L22.585 36.292C22.4268 36.4238 22.2194 36.5 22 36.5C21.8354 36.5 21.6773 36.4579 21.542 36.3809L21.415 36.292C20.4645 35.5003 19.5319 34.7335 18.6357 34.001L16.0732 31.916C11.3164 28.0548 7.41587 24.8864 4.69727 21.7617C1.99127 18.6515 0.5 15.632 0.5 12.0752C0.500032 5.45182 5.31601 0.5 11.6875 0.5C13.8255 0.5 15.792 1.1031 17.5488 2.29785L17.8975 2.54492C19.6723 3.85249 20.8619 5.52553 21.5664 6.75195L22 7.50586L22.4336 6.75195C23.0942 5.6021 24.1814 4.05969 25.7773 2.79395L26.1025 2.54492C27.9464 1.18658 30.032 0.5 32.3125 0.5Z"
+                  fill="currentColor" stroke="#4D4D4D"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="overlay overlay_cart">
+  <div class="overlay__modal">
+    <button class="overlay__button-close" type="button"></button>
+    <form class="modal-cart">
+      <ul class="modal-cart__list">
+        <li class="modal-cart__item">
+          <img class="modal-cart__image" src="./img/img.jpg" alt="Жилет">
+          <div class="modal-cart__wrapper">
+            <h3 class="modal-cart__subtitle">Жилет</h3>
+            <ul class="modal-cart__props props">
+              <li class="props__item">
+                <h4 class="props__title">Артикул:</h4>
+                <div class="props__description">IX001XW016CK</div>
+              </li>
+              <li class="props__item">
+                <h4 class="props__title">Количество</h4>
+                <div class="props__description">
+                  <button class="props__btn props__btn_minus" type="button">-</button>
+                  <output class="props__count">2</output>
+                  <button class="props__btn props__btn_plus" type="button">+</button>
+                </div>
+              </li>
+              <li class="props__item">
+                <h4 class="props__title">Цена, шт</h4>
+                <div class="props__description">4500 ₽</div>
+              </li>
+              <li class="props__item">
+                <h4 class="props__title">Стоимость</h4>
+                <div class="props__description">9000 ₽</div>
+              </li>
+            </ul>
+
+            <div class="modal-cart__footer">
+              <p class="modal-cart__total">Итог:
+                <output class="modal-cart__total-price" name="total-price">18 000</output>&nbsp;₽
+              </p>
+              <button type="submit" class="modal-cart__btn">Оформить заказ</button>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </form>
+  </div>
 </div>
 
 <svg class="hidden">

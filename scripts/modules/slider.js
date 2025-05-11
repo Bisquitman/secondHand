@@ -1,7 +1,8 @@
 import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs';
 
-const slider = ({sliderSelector, paginationParent, bulletClass, bulletActiveClass}) => {
-  new Swiper(sliderSelector, {
+const slider = ({parentSliderSelector, sliderSelector, paginationParent, bulletClass, bulletActiveClass}) => {
+  const swiper = new Swiper(sliderSelector, {
+    init: false,
     loop: true,
     speed: 800,
     autoplay: {
@@ -30,6 +31,20 @@ const slider = ({sliderSelector, paginationParent, bulletClass, bulletActiveClas
       },
     },
   });
+
+  const checkSlider = () => {
+    const href = location.href;
+    if (href.includes('?')) {
+      swiper.disable();
+      document.querySelector(parentSliderSelector)?.remove();
+    } else {
+      swiper.init();
+    }
+  };
+
+  checkSlider();
+
+  return checkSlider;
 }
 
 export default slider;
