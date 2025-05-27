@@ -1,0 +1,132 @@
+.modal-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 120px;
+}
+
+.modal-item__img {
+  aspect-ratio: 380/440;
+  width: 43%;
+  object-fit: cover;
+}
+
+.modal-item__title {
+  font-weight: 400;
+  font-size: 34px;
+  line-height: 1.3;
+  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.modal-item__advantage-list {
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 1.2;
+  margin-bottom: 20px;
+}
+
+.modal-item__article {
+  margin-bottom: 30px;
+}
+
+.modal-item__text {
+  font-weight: 500;
+}
+
+.modal-item__btn-group {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.modal-item__btn-to-cart {
+  font-size: 18px;
+  padding: 7px 25px;
+}
+
+.modal-item__btn-to-favorite {
+  line-height: 0;
+  color: var(--main-bg-color);
+  -webkit-transition: color 0.24s ease-in-out;
+  -moz-transition: color 0.24s ease-in-out;
+  -ms-transition: color 0.24s ease-in-out;
+  -o-transition: color 0.24s ease-in-out;
+  transition: color 0.24s ease-in-out;
+}
+
+.modal-item__btn-to-favorite:hover {
+  color: var(--favorite-hover-color);
+}
+
+.modal-item__btn-to-favorite:focus-visible:not(:hover) {
+  color: var(--favorite-focus-color);
+}
+
+.modal-item__btn-to-favorite:active, .modal-item__btn-to-favorite.active {
+  color: var(--favorite-active-color);
+}
+
+/* ------------------------------------------------ */
+
+@media (max-width: 1200px) {
+  .modal-item {
+    gap: 36px;
+  }
+
+  .modal-item__img {
+    aspect-ratio: 319/370;
+  }
+
+  .modal-item__title {
+    font-size: 30px;
+    margin-bottom: 35px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .modal-item {
+    gap: 10px;
+  }
+
+  .modal-item__img {
+    aspect-ratio: 222/320;
+  }
+
+  .modal-item__title {
+    font-size: 22px;
+    margin-bottom: 15px;
+  }
+
+  .modal-item__advantage-list {
+    font-size: 16px;
+  }
+
+  .modal-item__article {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 640px) {
+  .modal-item {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .modal-item__img {
+    aspect-ratio: 240/233;
+    width: 100%;
+  }
+
+  .modal-item__title {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+
+  .modal-item__advantage-list {
+    font-size: 14px;
+  }
+
+  .modal-item__article {
+    font-size: 14px;
+  }
+}

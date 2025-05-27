@@ -4,6 +4,8 @@ import selectControl from "./modules/selectControl.js";
 import slider from "./modules/slider.js";
 import renderGoods from "./modules/renderGoods.js";
 import interceptLink from "./modules/interceptLink.js";
+import itemModal from "./modules/itemModal.js";
+import addFavorite from "./modules/addFavorite.js";
 
 const init = () => {
   burgerMenu({
@@ -34,10 +36,36 @@ const init = () => {
     bulletActiveClass: 'hero__slider-line_active',
   });
 
-  renderGoods(location.search, () => {
+  try {
+    renderGoods(location.search, () => {
+      document.body.style.opacity = '1';
+    });
+  } catch (e) {
     document.body.style.opacity = '1';
+    console.error(e.message);
+  }
+  interceptLink(checkSlider);
+
+  itemModal({
+    selectorHandler: '.item__description-btn',
+    selectorParent: '.goods__list',
+    selectorModal: '.overlay_item',
+    classActive: 'overlay_active',
+    closeSelector: '.modal-item__btn-to-cart, .overlay__button-close',
   });
-  interceptLink(checkSlider)
+
+  addFavorite({
+    linkFavoriteHandler: ".header__btn_favorite",
+    targetSelector: ".item__favorite-btn",
+    parentSelector: ".goods__list",
+  });
+  addFavorite({
+    linkFavoriteHandler: ".header__btn_favorite",
+    targetSelector: ".modal-item__btn-to-favorite",
+    changeActiveClass: ".item__favorite-btn",
+  });
 };
 
 init();
+
+// 1:59:28

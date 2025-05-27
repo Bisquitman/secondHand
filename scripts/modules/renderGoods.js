@@ -1,6 +1,10 @@
 import serviceGoods from "../service/serviceGoods.js";
+import {getStorage} from "../service/serviceStorage.js";
+import {LS_FAV_KEY} from "./const.js";
 
 const createCard = (item) => {
+  const allFavorites = getStorage(LS_FAV_KEY);
+
   const li = document.createElement('li');
   li.className = 'goods__item';
   li.insertAdjacentHTML('beforeend', `
@@ -13,14 +17,14 @@ const createCard = (item) => {
         width="280"
         height="330"
       >
-      <button class="item__favorite-btn" data-id="${item.id}">
+      <button class="item__favorite-btn${allFavorites.includes(item.id) ? ' active' : ''}" data-id="${item.id}">
         <svg width="28" height="24">
           <use xlink:href="#heart"/>
         </svg>
       </button>
       <div class="item__control-wrapper">
         <h3 class="item__title">${item.title}</h3>
-        <button class="item__to-cart" data-id="${item.id}">В корзину</button>
+        <button class="item__to-cart button" data-id="${item.id}">В корзину</button>
         <p class="item__price">
           ${item.discountPrice 
             ? `${item.discountPrice.toLocaleString()}&nbsp;₽
@@ -36,16 +40,14 @@ const createCard = (item) => {
 }
 
 const renderCards = (parent) => {
-  return (data) => {
-    parent.append(...data.map(createCard));
-  };
+  return (data) => data ? parent.append(...data.map(createCard)) : null;
 }
 
 const renderGoods = (query, cb) => {
   const list = document.querySelector('.goods__list');
   list.innerHTML = '';
 
-  serviceGoods(renderCards(list), query, cb);
+  serviceGoods(renderCards(list), query, cb).then();
 };
 
 export default renderGoods;

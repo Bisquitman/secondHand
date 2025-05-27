@@ -9,12 +9,16 @@ const getGoods = (query='') => {
       }
       return new Error(response.statusText);
     })
-    .catch(error => console.error(error));
+    .catch(error => console.error('Ошибка запроса:', error.message));
 };
 
 const serviceGoods = async (fn, query, cb) => {
-  fn(await getGoods(query));
-  if (cb) cb();
+  try {
+    fn(await getGoods(query));
+    if (cb) cb();
+  } catch (error) {
+    console.error('Ошибка: ', error.message);
+  }
 };
 
 export default serviceGoods;
