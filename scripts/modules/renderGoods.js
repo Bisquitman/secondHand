@@ -31,10 +31,10 @@ const createCard = (item) => {
           data-id="${item.id}"
          >${itemCart ? `В корзине<sup>(${itemCart.count})</sup>` : 'В корзину'}</button>
         <p class="item__price">
-          ${item.discountPrice 
-            ? `${item.discountPrice.toLocaleString()}&nbsp;₽
-                <span class="item__price-old">${item.price.toLocaleString()}&nbsp;₽</span>` 
-            : `${item.price.toLocaleString()}&nbsp;₽`}
+          ${item.discountPrice
+    ? `${item.discountPrice.toLocaleString()}&nbsp;₽
+                <span class="item__price-old">${item.price.toLocaleString()}&nbsp;₽</span>`
+    : `${item.price.toLocaleString()}&nbsp;₽`}
         </p>
         <button class="item__description-btn" data-id="${item.id}">Подробнее</button>
       </div>
@@ -45,7 +45,14 @@ const createCard = (item) => {
 }
 
 const renderCards = (parent) => {
-  return (data) => data ? parent.append(...data.map(createCard)) : null;
+  return (data) => {
+    const listParam = new URLSearchParams(location.search).get('list');
+    if (data.length === 0 || listParam === '') {
+      parent.innerHTML = `<h2>Список пока пуст...</h2>`;
+    } else {
+      parent.append(...data.map(createCard));
+    }
+  }
 }
 
 const renderGoods = (query, cb) => {
