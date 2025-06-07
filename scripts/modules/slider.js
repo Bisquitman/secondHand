@@ -35,8 +35,9 @@ import {Swiper} from './swiper-bundle.min.js';
     });
 
     const checkSlider = () => {
+      const regexp = /\?(search|category|list)=/g;
       const href = location.href;
-      if (href.includes('?')) {
+      if (regexp.test(href)) {
         swiper.disable();
         document.querySelector(parentSliderSelector)?.remove();
       } else {

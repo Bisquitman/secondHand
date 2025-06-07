@@ -1,6 +1,6 @@
 export const getStorage = (key) => localStorage.getItem(key) ? JSON.parse(localStorage.getItem(key)) : [];
 
-const setStorage = (key, data) => data ? localStorage.setItem(key, JSON.stringify(data)) : [] ;
+export const setStorage = (key, data) => data ? localStorage.setItem(key, JSON.stringify(data)) : [] ;
 
 export const toggleStorage = (key, id) => {
   const data = getStorage(key);

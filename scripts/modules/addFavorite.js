@@ -1,5 +1,5 @@
 import {getStorage, toggleStorage} from "../service/serviceStorage.js";
-import {LS_FAV_KEY} from "./const.js";
+import {LS_FAV_KEY} from "../const.js";
 
 const addFavorite = ({
                        linkFavoriteHandler,

@@ -6,6 +6,9 @@ import renderGoods from "./modules/renderGoods.js";
 import interceptLink from "./modules/interceptLink.js";
 import itemModal from "./modules/itemModal.js";
 import addFavorite from "./modules/addFavorite.js";
+import {removePreloader} from "./preloader.js";
+import controlCart from "./modules/addCart.js";
+import renderCart from "./modules/renderCart.js";
 
 const init = () => {
   burgerMenu({
@@ -13,13 +16,6 @@ const init = () => {
     menuSelector: '.navigation',
     activeClass: 'navigation_active',
     closeSelector: '.navigation__link, .header__btn',
-  });
-  searchControl({
-    btnSelector: '.search__btn',
-    formSelector: '.search',
-    activeClass: 'search_active',
-    closeSelector: '.search__close',
-    breakpoint: 760,
   });
   selectControl({
     btnSelector: '.footer__subtitle',
@@ -35,13 +31,21 @@ const init = () => {
     bulletClass: 'hero__slider-line',
     bulletActiveClass: 'hero__slider-line_active',
   });
+  searchControl({
+    btnSelector: '.search__btn',
+    formSelector: '.search',
+    activeClass: 'search_active',
+    closeSelector: '.search__close',
+    breakpoint: 760,
+    cb: checkSlider,
+  });
 
   try {
     renderGoods(location.search, () => {
-      document.body.style.opacity = '1';
+      removePreloader();
     });
   } catch (e) {
-    document.body.style.opacity = '1';
+    removePreloader();
     console.error(e.message);
   }
   interceptLink(checkSlider);
@@ -54,6 +58,14 @@ const init = () => {
     closeSelector: '.modal-item__btn-to-cart, .overlay__button-close',
   });
 
+  itemModal({
+    selectorHandler: '.header__btn_cart',
+    selectorModal: '.overlay_cart',
+    classActive: 'overlay_active',
+    closeSelector: '.overlay__button-close',
+    cb: renderCart,
+  });
+
   addFavorite({
     linkFavoriteHandler: ".header__btn_favorite",
     targetSelector: ".item__favorite-btn",
@@ -64,8 +76,34 @@ const init = () => {
     targetSelector: ".modal-item__btn-to-favorite",
     changeActiveClass: ".item__favorite-btn",
   });
+
+  controlCart({
+    selectorAdd: '.item__to-cart',
+    selectorParent: '.goods__list',
+    text: 'В корзине<sup>({count})</sup>',
+  });
+
+  controlCart({
+    selectorAdd: '.modal-item__btn-to-cart',
+    text: 'В корзине<sup>({count})</sup>',
+    selectorText: {
+      selector: '.item__to-cart',
+      text: 'В корзине<sup>({count})</sup>',
+    },
+  });
+
+  controlCart({
+    selectorAdd: '.props__btn_plus',
+    selectorRemove: '.props__btn_minus',
+    selectorParent: '.modal-cart__list',
+    selectorText: {
+      selector: '.item__to-cart',
+      text: 'В корзине<sup>({count})</sup>',
+    },
+    cb: renderCart,
+  });
 };
 
 init();
 
-// 1:59:28
+// 7d 2:08:00

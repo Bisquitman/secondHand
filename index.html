@@ -11,12 +11,7 @@
   <script src="scripts/index.js" type="module"></script>
   <style id="style">
     body {
-      opacity: 0;
-      -webkit-transition: opacity 500ms ease;
-      -moz-transition: opacity 500ms ease;
-      -ms-transition: opacity 500ms ease;
-      -o-transition: opacity 500ms ease;
-      transition: opacity 500ms ease;
+      position: relative;
     }
 
     .hero__slider-link_women {
@@ -44,9 +39,85 @@
         background-image: url('img/hero/03_m.jpg');
       }
     }
+
+    .preloader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f5f5f5;
+      z-index: 9999;
+
+      -webkit-transition: opacity 0.5s ease-in-out;
+      -moz-transition: opacity 0.5s ease-in-out;
+      -ms-transition: opacity 0.5s ease-in-out;
+      -o-transition: opacity 0.5s ease-in-out;
+      transition: opacity 0.5s ease-in-out;
+    }
+
+    .spinner {
+      width: 70px;
+      text-align: center;
+    }
+
+    .spinner > div {
+      width: 18px;
+      height: 18px;
+      background-color: #a4ee08;
+
+      border-radius: 100%;
+      display: inline-block;
+      -webkit-animation: bouncedelay 1.4s infinite ease-in-out;
+      animation: bouncedelay 1.4s infinite ease-in-out;
+      /* Prevent first frame from flickering when animation starts */
+      -webkit-animation-fill-mode: both;
+      animation-fill-mode: both;
+    }
+
+    .spinner .bounce1 {
+      -webkit-animation-delay: -0.32s;
+      animation-delay: -0.32s;
+    }
+
+    .spinner .bounce2 {
+      -webkit-animation-delay: -0.16s;
+      animation-delay: -0.16s;
+    }
+
+    @-webkit-keyframes bouncedelay {
+      0%, 80%, 100% {
+        -webkit-transform: scale(0.0)
+      }
+      40% {
+        -webkit-transform: scale(1.0)
+      }
+    }
+
+    @keyframes bouncedelay {
+      0%, 80%, 100% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+      }
+      40% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+      }
+    }
   </style>
 </head>
 <body>
+
+<!--<div class="preloader">-->
+<!--  <div class="spinner">-->
+<!--    <div class="bounce1"></div>-->
+<!--    <div class="bounce2"></div>-->
+<!--    <div class="bounce3"></div>-->
+<!--  </div>-->
+<!--</div>-->
 
 <div class="wrapper">
 
@@ -77,8 +148,8 @@
       </nav>
 
       <div class="header__search">
-        <form action="#" class="search">
-          <input type="search" class="search__input" required/>
+        <form action="index.html" class="search">
+          <input type="search" name="search" class="search__input" required/>
           <button class="search__btn" type="button"></button>
           <button class="search__close" type="button"></button>
         </form>
@@ -221,28 +292,29 @@
       <div class="modal-item__description">
         <h2 class="modal-item__title">Жилет</h2>
         <ul class="modal-item__advantage-list">
-          <li class="modal-item__advantage-item">
-            Состав:
-            <span class="modal-item__text">Хлопок - 47%, Акрил - 26%, Шерсть - 14%, Полиамид - 13%</span>
-          </li>
-          <li class="modal-item__advantage-item">
-            Состав:
-            <span class="modal-item__text">Хлопок - 47%, Акрил - 26%, Шерсть - 14%, Полиамид - 13%</span>
-          </li>
-          <li class="modal-item__advantage-item">
-            Состав:
-            <span class="modal-item__text">Хлопок - 47%, Акрил - 26%, Шерсть - 14%, Полиамид - 13%</span>
-          </li>
-          <li class="modal-item__advantage-item">
-            Состав:
-            <span class="modal-item__text">Хлопок - 47%, Акрил - 26%, Шерсть - 14%, Полиамид - 13%</span>
-          </li>
-          <li class="modal-item__advantage-item">
-            Состав:
-            <span class="modal-item__text">Хлопок - 47%, Акрил - 26%, Шерсть - 14%, Полиамид - 13%</span>
-          </li>
+          <!--          <li class="modal-item__advantage-item">-->
+          <!--            Состав:-->
+          <!--            <span class="modal-item__text">Хлопок - 47%, Акрил - 26%, Шерсть - 14%, Полиамид - 13%</span>-->
+          <!--          </li>-->
+          <!--          <li class="modal-item__advantage-item">-->
+          <!--            Состав:-->
+          <!--            <span class="modal-item__text">Хлопок - 47%, Акрил - 26%, Шерсть - 14%, Полиамид - 13%</span>-->
+          <!--          </li>-->
+          <!--          <li class="modal-item__advantage-item">-->
+          <!--            Состав:-->
+          <!--            <span class="modal-item__text">Хлопок - 47%, Акрил - 26%, Шерсть - 14%, Полиамид - 13%</span>-->
+          <!--          </li>-->
+          <!--          <li class="modal-item__advantage-item">-->
+          <!--            Состав:-->
+          <!--            <span class="modal-item__text">Хлопок - 47%, Акрил - 26%, Шерсть - 14%, Полиамид - 13%</span>-->
+          <!--          </li>-->
+          <!--          <li class="modal-item__advantage-item">-->
+          <!--            Состав:-->
+          <!--            <span class="modal-item__text">Хлопок - 47%, Акрил - 26%, Шерсть - 14%, Полиамид - 13%</span>-->
+          <!--          </li>-->
         </ul>
-        <p class="modal-item__article">Артикул: <span class="modal-item__text modal-item__text_article">IX001XW016CK</span></p>
+        <p class="modal-item__article">Артикул: <span
+            class="modal-item__text modal-item__text_article">IX001XW016CK</span></p>
         <div class="modal-item__btn-group">
           <button class="modal-item__btn-to-cart button">В корзину</button>
           <button class="modal-item__btn-to-favorite">
@@ -259,46 +331,18 @@
 </div>
 
 <div class="overlay overlay_cart">
-  <div class="overlay__modal">
-    <button class="overlay__button-close" type="button"></button>
+  <div class="overlay__modal overlay__modal_cart">
+    <button class="overlay__button-close" type="button" title="Закрыть окно">&times;</button>
     <form class="modal-cart">
-      <ul class="modal-cart__list">
-        <li class="modal-cart__item">
-          <img class="modal-cart__img" src="./img/img.jpg" alt="Жилет">
-          <div class="modal-cart__wrapper">
-            <h3 class="modal-cart__subtitle">Жилет</h3>
-            <ul class="modal-cart__props props">
-              <li class="props__item">
-                <h4 class="props__title">Артикул:</h4>
-                <div class="props__description">IX001XW016CK</div>
-              </li>
-              <li class="props__item">
-                <h4 class="props__title">Количество</h4>
-                <div class="props__description">
-                  <button class="props__btn props__btn_minus" type="button">-</button>
-                  <output class="props__count">2</output>
-                  <button class="props__btn props__btn_plus" type="button">+</button>
-                </div>
-              </li>
-              <li class="props__item">
-                <h4 class="props__title">Цена, шт</h4>
-                <div class="props__description">4500 ₽</div>
-              </li>
-              <li class="props__item">
-                <h4 class="props__title">Стоимость</h4>
-                <div class="props__description">9000 ₽</div>
-              </li>
-            </ul>
+      <ul class="modal-cart__list"></ul>
 
-            <div class="modal-cart__footer">
-              <p class="modal-cart__total">Итог:
-                <output class="modal-cart__total-price" name="total-price">18 000</output>&nbsp;₽
-              </p>
-              <button type="submit" class="modal-cart__btn">Оформить заказ</button>
-            </div>
-          </div>
-        </li>
-      </ul>
+      <div class="modal-cart__footer">
+        <p class="modal-cart__total">Итог:
+          <output class="modal-cart__total-price" name="total-price">18 000</output>&nbsp;<span
+              class="modal-cart__total-price">₽</span>
+        </p>
+        <button type="submit" class="modal-cart__btn button">Оформить заказ</button>
+      </div>
     </form>
   </div>
 </div>

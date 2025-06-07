@@ -1,9 +1,11 @@
 import serviceGoods from "../service/serviceGoods.js";
 import {getStorage} from "../service/serviceStorage.js";
-import {LS_FAV_KEY} from "./const.js";
+import {LS_CART_KEY, LS_FAV_KEY} from "../const.js";
 
 const createCard = (item) => {
   const allFavorites = getStorage(LS_FAV_KEY);
+  const allCart = getStorage(LS_CART_KEY);
+  const itemCart = allCart.find((cartItem) => cartItem.id === item.id);
 
   const li = document.createElement('li');
   li.className = 'goods__item';
@@ -24,7 +26,10 @@ const createCard = (item) => {
       </button>
       <div class="item__control-wrapper">
         <h3 class="item__title">${item.title}</h3>
-        <button class="item__to-cart button" data-id="${item.id}">В корзину</button>
+        <button 
+          class="item__to-cart button" 
+          data-id="${item.id}"
+         >${itemCart ? `В корзине<sup>(${itemCart.count})</sup>` : 'В корзину'}</button>
         <p class="item__price">
           ${item.discountPrice 
             ? `${item.discountPrice.toLocaleString()}&nbsp;₽
@@ -47,7 +52,7 @@ const renderGoods = (query, cb) => {
   const list = document.querySelector('.goods__list');
   list.innerHTML = '';
 
-  serviceGoods(renderCards(list), query, cb).then();
+  serviceGoods(renderCards(list), query, cb);
 };
 
 export default renderGoods;

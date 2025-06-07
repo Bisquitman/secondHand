@@ -1,2 +1,61 @@
 .props {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.props__item {
+}
+
+.props__title {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.25;
+  text-align: center;
+  margin-bottom: 6px;
+}
+
+.props__description {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.props__btn {
+  width: 16px;
+  height: 16px;
+  flex: 0 0 16;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.15);
+  background-color: var(--main-bg-color);
+  border: 0.5px solid transparent;
+  border-radius: 50%;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1;
+  color: var(--card-text-color);
+
+  -webkit-transition: border-color 0.24s ease-in-out, box-shadow 0.24s ease-in-out;
+  -moz-transition: border-color 0.24s ease-in-out, box-shadow 0.24s ease-in-out;
+  -ms-transition: border-color 0.24s ease-in-out, box-shadow 0.24s ease-in-out;
+  -o-transition: border-color 0.24s ease-in-out, box-shadow 0.24s ease-in-out;
+  transition: border-color 0.24s ease-in-out, box-shadow 0.24s ease-in-out;
+}
+
+.props__btn:hover {
+  box-shadow: none;
+  border-color: var(--main-color);
+}
+
+.props__btn:focus {
+  opacity: 0.7;
+}
+
+.props__count {
 }

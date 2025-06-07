@@ -1,7 +1,8 @@
-export const URL_SERVER = "http://localhost:3000";
-export const URL_POSTFIX = '/api/goods';
+import {URL_POSTFIX, URL_SERVER} from "../const.js";
+import {addPreloader, removePreloader} from "../preloader.js";
 
 const getGoods = (query='') => {
+  addPreloader();
   return fetch(URL_SERVER + URL_POSTFIX + query)
     .then(response => {
       if (response.ok) {
@@ -9,7 +10,13 @@ const getGoods = (query='') => {
       }
       return new Error(response.statusText);
     })
-    .catch(error => console.error('Ошибка запроса:', error.message));
+    .finally(() => {
+      removePreloader();
+    })
+    .catch(error => {
+      removePreloader();
+      console.error('Ошибка запроса:', error.message)
+    });
 };
 
 const serviceGoods = async (fn, query, cb) => {

@@ -1,0 +1,12 @@
+{
+  "name": "second-hand-api",
+  "version": "1.0.0",
+  "description": "API for the secondHand app",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
